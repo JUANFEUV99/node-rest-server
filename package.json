@@ -10,8 +10,8 @@
     "author": "Juan Felipe Usuga V",
     "license": "ISC",
     "dependencies": {
+        "body-parser": "*",
         "express": "*",
-        "body-parser": "*"
+        "mongoose": "^5.3.14"
     }
-
 }
