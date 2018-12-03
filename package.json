@@ -10,8 +10,10 @@
     "author": "Juan Felipe Usuga V",
     "license": "ISC",
     "dependencies": {
+        "bcrypt": "^3.0.2",
         "body-parser": "*",
         "express": "*",
-        "mongoose": "^5.3.14"
+        "mongoose": "^5.3.14",
+        "mongoose-unique-validator": "^2.0.2"
     }
 }

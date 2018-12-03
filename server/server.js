@@ -3,7 +3,7 @@ const config = require('./config/config');
 const mongoose = require('mongoose');
 
 
-mongoose.connect('mongodb://localhost:27017/cafe', (err, res) => {
+mongoose.connect(process.env.NODE_ENV, (err, res) => {
     if (err) throw err;
     console.log('DataBase connected');
 
