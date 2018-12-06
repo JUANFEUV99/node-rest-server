@@ -1,6 +1,10 @@
-const usuario = require('./routes/usuario');
+const express = require('express');
+const app = express();
+app.use(require('./routes/index'));
 const config = require('./config/config');
 const mongoose = require('mongoose');
+const path = require('path');
+app.use(express.static(path.resolve(__dirname, '../public')));
 
 
 mongoose.connect(process.env.NODE_ENV, (err, res) => {
@@ -9,4 +13,4 @@ mongoose.connect(process.env.NODE_ENV, (err, res) => {
 
 });
 
-usuario.app.listen(process.env.PORT, () => console.log(`running on port ${process.env.PORT}`));
+app.listen(process.env.PORT, () => console.log(`running on port ${process.env.PORT}`));

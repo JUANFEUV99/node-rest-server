@@ -44,6 +44,9 @@ app.get('/usuario', (req, res) => {
 app.put('/usuario/:id', (req, res) => {
     let id = req.params.id;
     let body = req.body;
+    if (body.password != undefined || body.password != '') {
+        body.password = bcrypt.hashSync(body.password, 10);
+    }
     Usuario.findByIdAndUpdate(id, body, { new: true, runValidators: true }, (err, userdb) => {
         if (err) {
             res.status(400).json({
@@ -86,7 +89,4 @@ app.delete('/usuario/:id', (req, res) => {
     });
 });
 
-
-module.exports = {
-    app
-}
+module.exports = app;
